@@ -1,0 +1,142 @@
+@import '../styles/index.scss';
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    padding: $spacing-lg 0;
+    transition: all $transition-base;
+
+    &.scrolled {
+        @include glass-effect;
+        padding: $spacing-md 0;
+        box-shadow: $shadow-lg;
+    }
+}
+
+.container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 $spacing-lg;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @include respond-to(md) {
+        padding: 0 $spacing-2xl;
+    }
+}
+
+.logo {
+    display: flex;
+    align-items: baseline;
+    gap: $spacing-sm;
+    cursor: pointer;
+}
+
+.logoText {
+    font-family: $font-family-display;
+    font-size: $font-size-2xl;
+    font-weight: $font-weight-bold;
+    @include gradient-text($gradient-primary);
+}
+
+.logoSubtext {
+    font-size: $font-size-sm;
+    color: $color-text-secondary;
+    font-weight: $font-weight-medium;
+}
+
+.nav {
+    display: none;
+    gap: $spacing-xl;
+
+    @include respond-to(md) {
+        display: flex;
+    }
+}
+
+.navLink {
+    background: none;
+    color: $color-text-secondary;
+    font-size: $font-size-base;
+    font-weight: $font-weight-medium;
+    padding: $spacing-sm $spacing-md;
+    border-radius: $radius-md;
+    transition: all $transition-fast;
+    position: relative;
+
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%) scaleX(0);
+        width: 80%;
+        height: 2px;
+        background: $gradient-primary;
+        transition: transform $transition-base;
+    }
+
+    &:hover {
+        color: $color-text-primary;
+        background: rgba(59, 130, 246, 0.1);
+
+        &::after {
+            transform: translateX(-50%) scaleX(1);
+        }
+    }
+}
+
+.mobileMenuButton {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    padding: $spacing-sm;
+
+    @include respond-to(md) {
+        display: none;
+    }
+}
+
+.hamburger {
+    width: 24px;
+    height: 2px;
+    background: $color-text-primary;
+    border-radius: $radius-full;
+    transition: all $transition-base;
+}
+
+// Mobile menu
+@media (max-width: 767px) {
+    .nav {
+        position: fixed;
+        top: 70px;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        @include glass-effect;
+        padding: $spacing-xl;
+        gap: $spacing-md;
+        transform: translateY(-100%);
+        opacity: 0;
+        pointer-events: none;
+        transition: all $transition-base;
+
+        &.navOpen {
+            display: flex;
+            transform: translateY(0);
+            opacity: 1;
+            pointer-events: all;
+        }
+    }
+
+    .navLink {
+        width: 100%;
+        text-align: left;
+        padding: $spacing-md;
+    }
+}

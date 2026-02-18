@@ -1,0 +1,233 @@
+@import '../styles/index.scss';
+
+.hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: $spacing-5xl 0 $spacing-4xl;
+    overflow: hidden;
+}
+
+.background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    background: $gradient-hero;
+}
+
+.gradientOrb1,
+.gradientOrb2 {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.3;
+    animation: float 20s ease-in-out infinite;
+}
+
+.gradientOrb1 {
+    width: 500px;
+    height: 500px;
+    background: $gradient-primary;
+    top: -200px;
+    right: -100px;
+}
+
+.gradientOrb2 {
+    width: 400px;
+    height: 400px;
+    background: $gradient-accent;
+    bottom: -150px;
+    left: -100px;
+    animation-delay: -10s;
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    33% {
+        transform: translate(30px, -30px) scale(1.1);
+    }
+
+    66% {
+        transform: translate(-20px, 20px) scale(0.9);
+    }
+}
+
+.container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 $spacing-lg;
+    text-align: center;
+
+    @include respond-to(md) {
+        padding: 0 $spacing-2xl;
+    }
+}
+
+.badge {
+    display: inline-flex;
+    align-items: center;
+    gap: $spacing-sm;
+    padding: $spacing-sm $spacing-lg;
+    @include glass-effect;
+    border-radius: $radius-full;
+    font-size: $font-size-sm;
+    font-weight: $font-weight-medium;
+    color: $color-text-primary;
+    margin-bottom: $spacing-xl;
+    animation: slideDown 0.8s ease-out;
+}
+
+.badgeIcon {
+    font-size: $font-size-lg;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.title {
+    font-size: $font-size-4xl;
+    margin-bottom: $spacing-lg;
+    animation: fadeIn 1s ease-out 0.2s both;
+
+    @include respond-to(md) {
+        font-size: $font-size-6xl;
+    }
+}
+
+.gradient {
+    @include gradient-text($gradient-primary);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.subtitle {
+    font-size: $font-size-lg;
+    max-width: 800px;
+    margin: 0 auto $spacing-2xl;
+    line-height: $line-height-relaxed;
+    animation: fadeIn 1s ease-out 0.4s both;
+
+    @include respond-to(md) {
+        font-size: $font-size-xl;
+    }
+}
+
+.cta {
+    display: flex;
+    gap: $spacing-md;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: $spacing-4xl;
+    animation: fadeIn 1s ease-out 0.6s both;
+}
+
+.ctaPrimary,
+.ctaSecondary {
+    padding: $spacing-md $spacing-xl;
+    font-size: $font-size-base;
+    font-weight: $font-weight-semibold;
+    border-radius: $radius-lg;
+    transition: all $transition-base;
+
+    @include respond-to(md) {
+        padding: $spacing-lg $spacing-2xl;
+        font-size: $font-size-lg;
+    }
+}
+
+.ctaPrimary {
+    background: $gradient-primary;
+    color: $color-text-primary;
+    box-shadow: $shadow-md;
+
+    &:hover {
+        transform: translateY(-2px);
+        box-shadow: $shadow-xl, $shadow-glow;
+    }
+
+    &:active {
+        transform: translateY(0);
+    }
+}
+
+.ctaSecondary {
+    @include glass-effect;
+    color: $color-text-primary;
+
+    &:hover {
+        background: rgba(59, 130, 246, 0.2);
+        border-color: $color-border-hover;
+        transform: translateY(-2px);
+    }
+}
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: $spacing-xl;
+    max-width: 900px;
+    margin: 0 auto;
+    animation: fadeIn 1s ease-out 0.8s both;
+}
+
+.stat {
+    @include glass-effect;
+    padding: $spacing-xl;
+    border-radius: $radius-xl;
+    transition: all $transition-base;
+
+    &:hover {
+        transform: translateY(-4px);
+        border-color: $color-border-hover;
+        box-shadow: $shadow-lg;
+    }
+}
+
+.statNumber {
+    font-size: $font-size-4xl;
+    font-weight: $font-weight-bold;
+    @include gradient-text($gradient-primary);
+    margin-bottom: $spacing-sm;
+
+    @include respond-to(md) {
+        font-size: $font-size-5xl;
+    }
+}
+
+.statLabel {
+    font-size: $font-size-sm;
+    color: $color-text-secondary;
+    font-weight: $font-weight-medium;
+
+    @include respond-to(md) {
+        font-size: $font-size-base;
+    }
+}

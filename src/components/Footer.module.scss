@@ -1,0 +1,166 @@
+@import '../styles/index.scss';
+
+.footer {
+    background: $color-bg-secondary;
+    padding: $spacing-4xl 0 $spacing-xl;
+    border-top: 1px solid $color-border;
+}
+
+.container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 $spacing-lg;
+
+    @include respond-to(md) {
+        padding: 0 $spacing-2xl;
+    }
+}
+
+.grid {
+    display: grid;
+    gap: $spacing-3xl;
+    margin-bottom: $spacing-3xl;
+
+    @include respond-to(md) {
+        grid-template-columns: 2fr 1fr 1fr;
+    }
+}
+
+.brand {
+    max-width: 400px;
+}
+
+.logo {
+    display: flex;
+    align-items: baseline;
+    gap: $spacing-sm;
+    margin-bottom: $spacing-lg;
+}
+
+.logoText {
+    font-family: $font-family-display;
+    font-size: $font-size-2xl;
+    font-weight: $font-weight-bold;
+    @include gradient-text($gradient-primary);
+}
+
+.logoSubtext {
+    font-size: $font-size-sm;
+    color: $color-text-secondary;
+    font-weight: $font-weight-medium;
+}
+
+.tagline {
+    font-size: $font-size-base;
+    line-height: $line-height-relaxed;
+    color: $color-text-secondary;
+}
+
+.links {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-md;
+}
+
+.linksTitle,
+.contactTitle {
+    font-size: $font-size-lg;
+    font-weight: $font-weight-semibold;
+    color: $color-text-primary;
+    margin-bottom: $spacing-sm;
+}
+
+.link {
+    background: none;
+    color: $color-text-secondary;
+    font-size: $font-size-base;
+    text-align: left;
+    padding: $spacing-xs 0;
+    transition: color $transition-fast;
+
+    &:hover {
+        color: $color-accent-primary;
+    }
+}
+
+.contact {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-md;
+}
+
+.contactText {
+    font-size: $font-size-sm;
+    line-height: $line-height-relaxed;
+    color: $color-text-secondary;
+
+    @include respond-to(md) {
+        font-size: $font-size-base;
+    }
+}
+
+.contactButton {
+    padding: $spacing-md $spacing-lg;
+    background: $gradient-primary;
+    color: $color-text-primary;
+    font-size: $font-size-base;
+    font-weight: $font-weight-semibold;
+    border-radius: $radius-md;
+    transition: all $transition-base;
+    align-self: flex-start;
+
+    &:hover {
+        transform: translateY(-2px);
+        box-shadow: $shadow-lg, $shadow-glow;
+    }
+}
+
+.divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, $color-border, transparent);
+    margin-bottom: $spacing-xl;
+}
+
+.bottom {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-lg;
+    align-items: center;
+
+    @include respond-to(md) {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+.copyright {
+    font-size: $font-size-sm;
+    color: $color-text-muted;
+}
+
+.social {
+    display: flex;
+    align-items: center;
+    gap: $spacing-md;
+}
+
+.socialText {
+    font-size: $font-size-sm;
+    color: $color-text-muted;
+}
+
+.socialLinks {
+    display: flex;
+    gap: $spacing-md;
+}
+
+.socialLink {
+    font-size: $font-size-sm;
+    color: $color-text-secondary;
+    padding: $spacing-xs $spacing-sm;
+    transition: color $transition-fast;
+
+    &:hover {
+        color: $color-accent-primary;
+    }
+}

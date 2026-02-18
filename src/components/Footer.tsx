@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './Footer.module.scss';
+import spieLogo from '../assets/spie-logo.svg';
 
 const Footer: React.FC = () => {
     const currentYear = new Date().getFullYear();
@@ -10,7 +11,7 @@ const Footer: React.FC = () => {
                 <div className={styles.grid}>
                     <div className={styles.brand}>
                         <div className={styles.logo}>
-                            <span className={styles.logoText}>SPIE</span>
+                            <img src={spieLogo} alt="SPIE" className={styles.logoImg} />
                             <span className={styles.logoSubtext}>Hotwork</span>
                         </div>
                         <p className={styles.tagline}>

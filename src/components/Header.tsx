@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import styles from './Header.module.scss';
+import spieLogo from '../assets/spie-logo.svg';
 
 const Header: React.FC = () => {
     const [isScrolled, setIsScrolled] = useState(false);
@@ -26,7 +27,7 @@ const Header: React.FC = () => {
         <header className={`${styles.header} ${isScrolled ? styles.scrolled : ''}`}>
             <div className={styles.container}>
                 <div className={styles.logo}>
-                    <span className={styles.logoText}>SPIE</span>
+                    <img src={spieLogo} alt="SPIE" className={styles.logoImg} />
                     <span className={styles.logoSubtext}>Hotwork</span>
                 </div>
 

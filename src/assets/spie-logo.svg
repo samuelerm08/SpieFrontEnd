@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 120" width="220" height="120">
+  <!-- Red circle with white wave lines -->
+  <circle cx="130" cy="22" r="20" fill="#cc1f2a"/>
+  <!-- White wave stripes inside circle -->
+  <clipPath id="circleClip">
+    <circle cx="130" cy="22" r="20"/>
+  </clipPath>
+  <g clip-path="url(#circleClip)" fill="none" stroke="white" stroke-width="3" stroke-linecap="round">
+    <path d="M115 30 Q122 24 130 26 Q138 28 145 22"/>
+    <path d="M113 35 Q122 28 131 31 Q140 34 147 27"/>
+    <path d="M117 25 Q124 19 132 21 Q140 23 146 17"/>
+    <path d="M119 20 Q126 14 133 16 Q141 18 146 12"/>
+    <path d="M122 15 Q128 10 135 12 Q141 14 145 8"/>
+  </g>
+
+  <!-- SPIE text in navy blue -->
+  <text
+    x="10"
+    y="90"
+    font-family="-apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif"
+    font-size="62"
+    font-weight="800"
+    fill="#1a2f6e"
+    letter-spacing="-2"
+  >SPIE</text>
+</svg>

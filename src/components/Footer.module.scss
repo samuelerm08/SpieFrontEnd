@@ -32,22 +32,23 @@
 
 .logo {
     display: flex;
-    align-items: baseline;
+    align-items: center;
     gap: $spacing-sm;
     margin-bottom: $spacing-lg;
 }
 
-.logoText {
-    font-family: $font-family-display;
-    font-size: $font-size-2xl;
-    font-weight: $font-weight-bold;
-    @include gradient-text($gradient-primary);
+.logoImg {
+    height: 36px;
+    width: auto;
+    display: block;
 }
 
 .logoSubtext {
-    font-size: $font-size-sm;
+    font-size: $font-size-base;
     color: $color-text-secondary;
-    font-weight: $font-weight-medium;
+    font-weight: $font-weight-semibold;
+    border-left: 2px solid $color-border-hover;
+    padding-left: $spacing-sm;
 }
 
 .tagline {

@@ -1,5 +1,7 @@
 import React from 'react';
 import styles from './Expertise.module.scss';
+import technicianImg from '../assets/images/Hotwork-Experience-Technicians.jpg';
+import trainingImg from '../assets/images/Hotwork-Experience-Technicians-Training.jpg';
 
 interface ExpertiseStat {
     number: string;
@@ -34,6 +36,30 @@ const Expertise: React.FC = () => {
                     <p className={styles.subtitle}>
                         Decades of innovation and excellence in refractory services
                     </p>
+                </div>
+
+                {/* Photo Gallery */}
+                <div className={styles.gallery}>
+                    <div className={styles.galleryItem}>
+                        <img
+                            src={technicianImg}
+                            alt="Hotwork experienced technicians on site"
+                            className={styles.galleryImage}
+                        />
+                        <div className={styles.galleryOverlay}>
+                            <span className={styles.galleryLabel}>Field Expertise</span>
+                        </div>
+                    </div>
+                    <div className={styles.galleryItem}>
+                        <img
+                            src={trainingImg}
+                            alt="Hotwork technician training program"
+                            className={styles.galleryImage}
+                        />
+                        <div className={styles.galleryOverlay}>
+                            <span className={styles.galleryLabel}>Technician Training</span>
+                        </div>
+                    </div>
                 </div>
 
                 <div className={styles.content}>
